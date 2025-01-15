@@ -10,8 +10,16 @@ assert hypotenuse(3,4,True) == 5
 (2 points)
 """
 
-def hypotenuse():
-    return
+def hypotenuse(x,y,z):
+    if z is True:
+        c = (x**2 + y**2)**(1/2)
+        return c
+    elif z is False:
+        c = max(x,y)
+        a = min(x,y)
+        b = (c**2 - a**2)**(1/2)
+        return b 
+
 
 if __name__ == "__main__":
     assert hypotenuse(3,4,True) == 5

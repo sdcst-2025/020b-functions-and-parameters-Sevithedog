@@ -7,8 +7,15 @@ Return False if the number is not an integer
 (2 points)
 """
 
-def isInteger():
-    return
+def isInteger(n):
+  try: 
+    x = int(n)
+  except:
+    return False
+  if int(n) == n:
+    return True
+  else:
+    return False
 
 if __name__ == "__main__":
   assert isInteger( 9.5 ) == False
