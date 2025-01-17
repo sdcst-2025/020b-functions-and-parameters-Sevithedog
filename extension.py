@@ -35,33 +35,43 @@ output is: "The solutions are x=?? and x=??"
 """
 
 def numSolutions(a,b,c):
-    # inputs:
-    # float a
-    # float b
-    # float c
-    # Description:
-    #
-    # return 0, 1 or 2
-    return 
+    if b**2 - 4 * a * c < 0:
+        nsol = 0
+    elif b**2 - 4 * a * c == 0:
+        nsol = 1
+    elif b**2 - 4 * a * c == 2:
+        nsol = 2
+    return nsol
 
-def solutions(a,b,c):
-    #inputs:
-    # float a
-    # float b
-    # float c
-    # Desription:
-    #
-    # return tuple of float solution1 and float solution2
-    return
+def solutions(a,b,c,nsol):
+    import math
+    if nsol == 1:
+        x1 = (-b + (b**2 - 4 * a * c)**(1/2)) / (2*a)
+        x2 = (-b - (b**2 - 4 * a * c)**(1/2)) / (2*a)
+    l = (x1,x2)
+    return l
 
 def title():
     # inputs none
     # return str of All the title and instructions on one line
-    return
+    t = "Use this program to solve quadractics." "Enter the quadratic in the form ax^2 + bx + c"
+    return t
 
 
 def main():
     # Display Title and Instructions
+    a = float(input("a = "))
+    b = float(input("b = "))
+    c = float(input("c = "))
+    n = numSolutions(a,b,c)
+    if n == 0:
+        print("There is no solution.") 
+        exit()
+    awnswer = solutions(a,b,c,n)
+    print(awnswer)
+
+
+
     print( title() )
     # Your code and function calls should go here
 
